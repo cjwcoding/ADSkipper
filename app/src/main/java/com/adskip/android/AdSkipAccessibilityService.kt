@@ -79,6 +79,12 @@ class AdSkipAccessibilityService : AccessibilityService() {
         
         // 忽略白名单中的包名
         if (packageName in IGNORED_PACKAGES) return
+
+        // 仅处理可启动应用，避免系统界面误触
+        val installed = RuleStore(this).getInstalledPackages()
+        if (installed.isNotEmpty() && packageName !in installed) {
+            return
+        }
         
         // 忽略系统包名前缀
         if (packageName.startsWith("com.android.") || 

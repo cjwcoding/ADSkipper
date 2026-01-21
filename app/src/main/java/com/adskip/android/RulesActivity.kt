@@ -33,7 +33,7 @@ class RulesActivity : AppCompatActivity() {
     }
 
     private fun loadApps() {
-        val apps = AppScanner.scanLauncherApps(this)
+        val apps = AppScanner.scanInstalledApps(this)
         ruleStore.setInstalledPackages(apps.map { it.packageName }.toSet())
         allApps = apps.map { app ->
             AppEntry(

@@ -3,6 +3,7 @@ package com.adskip.android
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ResolveInfo
+import android.os.Build
 
 data class AppInfo(
     val packageName: String,
@@ -32,8 +33,25 @@ object AppScanner {
         return apps.sortedBy { it.label.lowercase() }
     }
 
-    fun scanLauncherPackages(context: Context): Set<String> {
-        return scanLauncherApps(context).map { it.packageName }.toSet()
+    fun scanInstalledApps(context: Context): List<AppInfo> {
+        val pm = context.packageManager
+        val apps = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            pm.getInstalledApplications(android.content.pm.PackageManager.ApplicationInfoFlags.of(0))
+        } else {
+            @Suppress("DEPRECATION")
+            pm.getInstalledApplications(0)
+        }
+        return apps.map { info ->
+            AppInfo(
+                packageName = info.packageName,
+                label = pm.getApplicationLabel(info).toString(),
+                icon = info.loadIcon(pm)
+            )
+        }.sortedBy { it.label.lowercase() }
+    }
+
+    fun scanInstalledPackages(context: Context): Set<String> {
+        return scanInstalledApps(context).map { it.packageName }.toSet()
     }
 }
 

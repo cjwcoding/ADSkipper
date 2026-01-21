@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun syncInstalledApps() {
-        val packages = AppScanner.scanLauncherPackages(this)
+        val packages = AppScanner.scanInstalledPackages(this)
         RuleStore(this).setInstalledPackages(packages)
     }
 }
