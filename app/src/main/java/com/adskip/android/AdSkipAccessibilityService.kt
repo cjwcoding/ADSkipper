@@ -43,6 +43,15 @@ class AdSkipAccessibilityService : AccessibilityService() {
             "com.android.settings",
             "com.adskip.android",  // 自己
         )
+        private val IGNORED_PACKAGE_PREFIXES = listOf(
+            "com.android.systemui",
+            "com.samsung.android.systemui",
+            "com.miui.systemui",
+            "com.vivo.systemui",
+            "com.oppo.systemui",
+            "com.realme.systemui",
+            "com.huawei.systemui"
+        )
         
         // 最大节点遍历深度（性能优化）
         private const val MAX_DEPTH = 10
@@ -83,6 +92,11 @@ class AdSkipAccessibilityService : AccessibilityService() {
         // 仅处理可启动应用，避免系统界面误触
         val installed = RuleStore(this).getInstalledPackages()
         if (installed.isNotEmpty() && packageName !in installed) {
+            return
+        }
+
+        // 忽略系统界面相关包名前缀（下拉菜单/快捷设置等）
+        if (IGNORED_PACKAGE_PREFIXES.any { packageName.startsWith(it) }) {
             return
         }
         
