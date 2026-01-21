@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ad Skip</string>
+    <string name="accessibility_service_label">广告跳过服务</string>
+    <string name="accessibility_service_description">此服务用于自动检测并跳过开屏广告。\n\n工作原理：\n• 监听屏幕上的"跳过"按钮\n• 自动点击跳过广告\n• 不收集任何个人信息\n\n请放心使用，本应用完全开源。</string>
+    <string name="app_description">本应用利用 Android 无障碍服务，\n自动检测并点击"跳过广告"按钮。\n\n支持大多数应用的开屏广告。\n无需 Root，不消耗流量，不影响性能。</string>
+</resources>
