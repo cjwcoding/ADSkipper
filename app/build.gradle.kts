@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.adskip"
+    namespace = "com.adskip.android"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.adskip"
+        applicationId = "com.adskip.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -46,3 +46,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 }
+

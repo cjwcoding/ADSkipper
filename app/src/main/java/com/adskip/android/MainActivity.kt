@@ -1,4 +1,4 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Context
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.accessibility.AccessibilityManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adskip.databinding.ActivityMainBinding
+import com.adskip.android.databinding.ActivityMainBinding
 
 /**
  * 主界面
@@ -95,3 +95,4 @@ class MainActivity : AppCompatActivity() {
         RuleStore(this).setInstalledPackages(packages)
     }
 }
+

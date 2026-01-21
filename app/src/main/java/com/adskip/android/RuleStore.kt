@@ -1,4 +1,4 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.content.Context
 
@@ -41,3 +41,4 @@ class RuleStore(context: Context) {
         private const val KEY_PACKAGE_PREFIX = "pkg_keywords_"
     }
 }
+

@@ -1,10 +1,10 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adskip.databinding.ItemRuleBinding
+import com.adskip.android.databinding.ItemRuleBinding
 
 data class AppEntry(
     val packageName: String,
@@ -82,3 +82,4 @@ class RulesAdapter(
         }
     }
 }
+

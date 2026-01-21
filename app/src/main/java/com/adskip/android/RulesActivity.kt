@@ -1,11 +1,11 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.adskip.databinding.ActivityRulesBinding
+import com.adskip.android.databinding.ActivityRulesBinding
 
 class RulesActivity : AppCompatActivity() {
 
@@ -65,3 +65,4 @@ class RulesActivity : AppCompatActivity() {
         })
     }
 }
+

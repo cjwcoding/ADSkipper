@@ -1,4 +1,4 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityServiceInfo
@@ -41,7 +41,7 @@ class AdSkipAccessibilityService : AccessibilityService() {
             "com.android.launcher3",
             "com.android.systemui",
             "com.android.settings",
-            "com.example.adskip",  // 自己
+            "com.adskip.android",  // 自己
         )
         
         // 最大节点遍历深度（性能优化）
@@ -240,3 +240,4 @@ class AdSkipAccessibilityService : AccessibilityService() {
         Log.i(TAG, "AdSkip 无障碍服务已停止")
     }
 }
+

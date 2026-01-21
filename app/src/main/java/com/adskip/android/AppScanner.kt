@@ -1,4 +1,4 @@
-package com.example.adskip
+package com.adskip.android
 
 import android.content.Context
 import android.content.Intent
@@ -36,3 +36,4 @@ object AppScanner {
         return scanLauncherApps(context).map { it.packageName }.toSet()
     }
 }
+
